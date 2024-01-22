@@ -1,4 +1,3 @@
-// CryptoDashboard.js
 import React, { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import CryptoDashboardStyles from './CryptoDashboardStyles'; // Adjust the path accordingly
@@ -86,7 +85,7 @@ const CryptoDashboard = () => {
   // Convert the entered amount of the selected coin to dollars and Rwandan francs
   useEffect(() => {
     if (amountInDollars && selectedCoin) {
-      const priceInUSD = marketData[marketData.length - 1]?.price;
+      const priceInUSD = marketData.length > 0 ? marketData[marketData.length - 1]?.price : 1;
       const convertedAmountInDollars = amountInDollars * priceInUSD;
       setAmountInRwandanFrancs(convertedAmountInDollars * 1000); // Assuming 1 USD = 1000 Rwandan francs (adjust as needed)
     }
@@ -143,7 +142,7 @@ const CryptoDashboard = () => {
                 Amount in Dollars: ${amountInDollars} USD
               </p>
               <p>
-                Amount in Rwandan Francs: {amountInRwandanFrancs} RWF
+                Amount in Rwandan Francs: {isNaN(amountInRwandanFrancs) ? 'N/A' : `${amountInRwandanFrancs} RWF`}
               </p>
             </div>
             <canvas id="crypto-chart" width="800" height="400" style={CryptoDashboardStyles.chart}></canvas>
