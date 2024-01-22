@@ -36,5 +36,11 @@ Getting Started:
     Install dependencies using npm install.
     Run the application with npm start.
 
+    ![image](https://github.com/newtechnology12/hisprwanda-CryptoDashboard/assets/99047649/6baa7b96-0f4f-4026-aa0f-43c11476a760)
+
+    ![image](https://github.com/newtechnology12/hisprwanda-CryptoDashboard/assets/99047649/75e2d878-baec-4fe4-bd42-c7485f8341d9)
+
+
+
 Author:
 Twayigize albert
